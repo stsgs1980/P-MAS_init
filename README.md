@@ -8,7 +8,29 @@
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?logo=tailwindcss)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
----
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Architecture](#architecture)
+- [Tech Stack](#tech-stack)
+- [Design System](#design-system)
+- [Getting Started](#getting-started)
+- [Clone the repository](#clone-the-repository)
+- [Install dependencies](#install-dependencies)
+- [Set up the database](#set-up-the-database)
+- [Seed the database with sample agents and tasks](#seed-the-database-with-sample-agents-and-tasks)
+- [(Visit http://localhost:3000/api/seed after starting the server)](#visit-http:localhost:3000apiseed-after-starting-the-server)
+- [Start the development server (port 3000)](#start-the-development-server-port-3000)
+- [Run linting](#run-linting)
+- [Push schema changes to database](#push-schema-changes-to-database)
+- [Project Structure](#project-structure)
+- [API Endpoints](#api-endpoints)
+- [Features](#features)
+- [Database Schema](#database-schema)
+- [Agent Catalog](#agent-catalog)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -19,13 +41,12 @@ The dashboard provides two main views:
 - **Dashboard** — System overview with metrics, role group status, formula taxonomy, network activity, performance monitoring, and alert management
 - **Hierarchy Visualization** — Interactive SVG-based agent hierarchy with zoom, pan, minimap, collapsible sidebar, search, and context menus
 
----
 
 ## Architecture
 
 ### Agent Hierarchy
 
-```
+```bash
                     P-MAS System
                          |
         +-------+-------+-------+-------+
@@ -70,7 +91,6 @@ The dashboard provides two main views:
 | Supervise | Oversight relationship | `#475569` |
 | Broadcast | Group-wide notification | `#0E7490` |
 
----
 
 ## Tech Stack
 
@@ -86,7 +106,6 @@ The dashboard provides two main views:
 | **Lucide Icons** | SVG icon system (no emoji/Unicode) |
 | **agent-toolkit v1.5.0** | Standards, skills, resilience layer |
 
----
 
 ## Design System
 
@@ -123,7 +142,6 @@ The dashboard uses a strict monochrome color system with **Cyan (#06B6D4)** as t
 - **High contrast** — Everything reads instantly
 - **Data-first minimalism** — No decoration, content drives design
 
----
 
 ## Getting Started
 
@@ -135,30 +153,30 @@ The dashboard uses a strict monochrome color system with **Cyan (#06B6D4)** as t
 ### Installation
 
 ```bash
-# Clone the repository
+## Clone the repository
 git clone https://github.com/stsgs1980/P-MAS.git
 cd P-MAS
 
-# Install dependencies
+## Install dependencies
 bun install
 
-# Set up the database
+## Set up the database
 bun run db:push
 
-# Seed the database with sample agents and tasks
-# (Visit http://localhost:3000/api/seed after starting the server)
+## Seed the database with sample agents and tasks
+## (Visit http://localhost:3000/api/seed after starting the server)
 ```
 
 ### Development
 
 ```bash
-# Start the development server (port 3000)
+## Start the development server (port 3000)
 bun run dev
 
-# Run linting
+## Run linting
 bun run lint
 
-# Push schema changes to database
+## Push schema changes to database
 bun run db:push
 ```
 
@@ -172,11 +190,10 @@ curl -X POST http://localhost:3000/api/seed
 
 This creates 26 agents across 8 role groups with hierarchy relationships and 26 sample tasks.
 
----
 
 ## Project Structure
 
-```
+```bash
 P-MAS/
 ├── prisma/
 │   └── schema.prisma          # Agent & Task models
@@ -217,7 +234,6 @@ P-MAS/
 └── tsconfig.json
 ```
 
----
 
 ## API Endpoints
 
@@ -249,7 +265,6 @@ P-MAS/
 | `GET` | `/api/health` | Server health check (database status) |
 | `POST` | `/api/seed` | Seed database with sample data |
 
----
 
 ## Features
 
@@ -290,7 +305,6 @@ P-MAS/
 - Agent detail panel with staggered animations
 - Mobile responsive with overlay sidebar
 
----
 
 ## Database Schema
 
@@ -325,7 +339,6 @@ model Task {
 }
 ```
 
----
 
 ## Agent Catalog
 
@@ -358,16 +371,17 @@ model Task {
 | 25 | Adapter | Adapter Agent | Обучение | MetaCoT | Active |
 | 26 | Otsenochnik | Evaluator Agent | Обучение | LeastToMost | Idle |
 
----
 
 ## License
 
 MIT
 
----
 
 ## Acknowledgments
 
 - Built with [Next.js](https://nextjs.org/), [Prisma](https://www.prisma.io/), [shadcn/ui](https://ui.shadcn.com/), and [Framer Motion](https://www.framer.com/motion/)
 - Icon system by [Lucide](https://lucide.dev/)
 - Styled with [Tailwind CSS](https://tailwindcss.com/)
+
+---
+Built with: Next.js + TypeScript + Tailwind CSS + CSS
